@@ -5,7 +5,7 @@ namespace My_books.Data.Services
 {
     public class BookService
     {
-        private AppDbContext _context;
+        private readonly AppDbContext _context;
         public BookService( AppDbContext context)
         {
             _context = context;
@@ -28,5 +28,10 @@ namespace My_books.Data.Services
             _context.Books.Add(_book);
             _context.SaveChanges();
         }
+
+        public List<Book> GetAllBooks() => _context.Books.ToList();
+
+        public Book GetBookById(int bookId) => 
+            _context.Books.FirstOrDefault(n => n.Id == bookId);
     }
 }
