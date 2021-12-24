@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using My_books.Data;
+using My_books.Data.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
                 builder.Configuration.GetConnectionString("DefaultConnectionString"))
             );
 
+builder.Services.AddTransient<BookService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
