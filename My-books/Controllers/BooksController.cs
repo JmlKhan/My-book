@@ -50,6 +50,15 @@ namespace My_books.Controllers
             var updateBook = _bookService.UpdateBookById(id, book);
             return Ok(updateBook);
         }
+
+        //delete book
+        [HttpDelete("delete-book/{id:int}")]
+        public IActionResult DeleteBook(int id)
+        {
+            _bookService.DeleteById(id);
+
+            return NoContent();
+        }
         
     }
 }
