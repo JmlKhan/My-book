@@ -33,5 +33,25 @@ namespace My_books.Data.Services
 
         public Book GetBookById(int bookId) => 
             _context.Books.FirstOrDefault(n => n.Id == bookId);
+
+        public Book UpdateBookById(int bookId, BookVM book)
+        {
+            var _book = _context.Books.FirstOrDefault(n => n.Id == bookId);
+
+            if(_book != null)
+            {
+                _book.Title = book.Title;
+                _book.Description = book.Description;
+                _book.isRead = book.isRead;
+                _book.DateRead = book.isRead ? book.DateRead.Value : null;
+                _book.Rate = book.isRead ? book.Rate.Value : null;
+                _book.Genre = book.Genre;
+                _book.Author = book.Author;
+                _book.CoverUrl = book.CoverUrl;
+
+                _context.SaveChanges();
+            }
+            return _book;
+        }
     }
 }

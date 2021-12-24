@@ -42,6 +42,14 @@ namespace My_books.Controllers
             return Ok();
         }
 
+        //patch book
+         [HttpPatch("update-book/{id:int}")]
+
+         public IActionResult UpdateBook(int id, [FromBody]BookVM book)
+        {
+            var updateBook = _bookService.UpdateBookById(id, book);
+            return Ok(updateBook);
+        }
         
     }
 }
