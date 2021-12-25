@@ -13,6 +13,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
                 builder.Configuration.GetConnectionString("DefaultConnectionString"))
             );
 
+builder.Services.AddTransient<AuthorService>();
+builder.Services.AddTransient<PublisherService>();
 builder.Services.AddTransient<BookService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
