@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using My_books.ActionResults;
+using My_books.Data.Model;
 using My_books.Data.Services;
 using My_books.Data.ViewModels;
 using My_books.Exceptions;
@@ -39,18 +41,31 @@ namespace My_books.Controllers
 
 
         [HttpGet("get-publisher-by-id/{id:int}")]
-        public IActionResult GetPublisherById(int id)
+        public CustomActionResult GetPublisherById(int id)
         {
             
-
             var _response = _publisherService.GetPublisherById(id);
             
             if(_response != null)
             {
-                return Ok(_response);
+                //return Ok(_response);
+
+                var _responseObj = new CustomActionResultVM()
+                {
+                    Publisher = _response
+                };
+
+                return new CustomActionResult(_responseObj);
             } else
             {
-                return NotFound();
+                // return NotFound();
+
+                var _responseObj = new CustomActionResultVM()
+                {
+                    Exception = new Exception("this is coming from publishers controller")
+                };
+
+                return new CustomActionResult(_responseObj);
             }
         }
 
