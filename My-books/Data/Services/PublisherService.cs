@@ -1,5 +1,7 @@
 ﻿using My_books.Data.Model;
 using My_books.Data.ViewModels;
+using My_books.Exceptions;
+using System.Text.RegularExpressions;
 
 namespace My_books.Data.Services
 {
@@ -13,6 +15,10 @@ namespace My_books.Data.Services
 
         public Publisher AddPublisher(PublisherVM publisher)
         {
+            if (StringStartWithNumber(publisher.Name)) 
+                    throw new PublisherNameException("Name starts with number", publisher.Name);
+            
+            
             var _publisher = new Publisher()
             {
                 Name = publisher.Name
@@ -55,5 +61,11 @@ namespace My_books.Data.Services
                 throw new Exception($"The publisher with id {id} does not exist!");
             }
         }
+
+        //check publisher name starts with number
+        private bool StringStartWithNumber(string name) 
+                                   => Regex.IsMatch(name, @"^\d");
+    
+        
     }
 }
