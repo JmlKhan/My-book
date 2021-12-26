@@ -13,6 +13,7 @@ namespace My_books.Data.Services
             _context = context;
         }
 
+        public List<Publisher> GetAllPublishers() => _context.Publishers.ToList();
         public Publisher AddPublisher(PublisherVM publisher)
         {
             if (StringStartWithNumber(publisher.Name)) 

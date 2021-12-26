@@ -19,6 +19,22 @@ namespace My_books.Controllers
             _publisherService = publisherService;
         }
 
+        [HttpGet("get-all-publishers")]
+        public IActionResult GetAllPublishers()
+        {
+            try
+            {
+                var publishers = _publisherService.GetAllPublishers();
+                return Ok(publishers);
+            }
+            catch (Exception)
+            {
+
+                return BadRequest("sorry, We could not load publishers");
+            }
+            
+        }
+
       
         [HttpPost("add-publisher")]
         public IActionResult AddPublisher([FromBody] PublisherVM publisher)
@@ -41,31 +57,18 @@ namespace My_books.Controllers
 
 
         [HttpGet("get-publisher-by-id/{id:int}")]
-        public CustomActionResult GetPublisherById(int id)
+        public IActionResult GetPublisherById(int id)
         {
             
             var _response = _publisherService.GetPublisherById(id);
             
             if(_response != null)
             {
-                //return Ok(_response);
-
-                var _responseObj = new CustomActionResultVM()
-                {
-                    Publisher = _response
-                };
-
-                return new CustomActionResult(_responseObj);
+                return Ok(_response);
             } else
             {
-                // return NotFound();
+                 return NotFound();
 
-                var _responseObj = new CustomActionResultVM()
-                {
-                    Exception = new Exception("this is coming from publishers controller")
-                };
-
-                return new CustomActionResult(_responseObj);
             }
         }
 
