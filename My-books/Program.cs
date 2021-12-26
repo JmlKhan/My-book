@@ -40,6 +40,8 @@ app.ConfigureBuildInExceptionHandler();
 
 app.MapControllers();
 
-//AppDbInitializer.Seed(app);
+//exception handling
+AppDbInitializer.Seed(app);
+//app.ConfigureCustomExceptionMiddleware();
 
 app.Run();
