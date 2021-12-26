@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "R1ltkwvVm3zk447ZPzigcAOcHkSGXxAvwFDmRkVSeQflZNmqZH/4rvpe7Oz16cNmLib0zK683Y103pHwhNU77Q==",
+  "dgSpecHash": "X9JmaoAl1U5OonUIbIv3YMwyKAxJR8By1X9CUaaFqHknZAm6kLUaLSXRMv15F+oVFUTMCZr10Xp3389iQYqqSg==",
   "success": true,
   "projectFilePath": "C:\\Users\\jmlkh\\source\\repos\\My-books\\My-books\\My-books.csproj",
   "expectedPackageFiles": [
@@ -51,6 +51,7 @@
     "C:\\Users\\jmlkh\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\jmlkh\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\jmlkh\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\jmlkh\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\jmlkh\\.nuget\\packages\\nito.asyncex.context\\5.1.0\\nito.asyncex.context.5.1.0.nupkg.sha512",
     "C:\\Users\\jmlkh\\.nuget\\packages\\nito.asyncex.coordination\\5.1.0\\nito.asyncex.coordination.5.1.0.nupkg.sha512",
     "C:\\Users\\jmlkh\\.nuget\\packages\\nito.asyncex.tasks\\5.1.0\\nito.asyncex.tasks.5.1.0.nupkg.sha512",
