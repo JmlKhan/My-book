@@ -3,11 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace My_books.Controllers.v2
 {
+    [ApiVersion("2.0")]
     [Route("api/[controller]")]
     [ApiController]
     public class TestController : ControllerBase
     {
-        [HttpGet("get-teset-data")]
+        [HttpGet("get-test-data")]
         public IActionResult Get()
         {
             return Ok("This is TestController v2");
