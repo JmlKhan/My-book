@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "X9JmaoAl1U5OonUIbIv3YMwyKAxJR8By1X9CUaaFqHknZAm6kLUaLSXRMv15F+oVFUTMCZr10Xp3389iQYqqSg==",
+  "dgSpecHash": "EabpSK4DiFELFaWS5cEgJMsBxCNF9lXBNBkQ0tnmPV9UhdQKCj2/gf64Skst1euwDxSwFe/rAOuyTa0kXpOc9w==",
   "success": true,
   "projectFilePath": "C:\\Users\\jmlkh\\source\\repos\\My-books\\My-books\\My-books.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jmlkh\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\jmlkh\\.nuget\\packages\\jetbrains.annotations\\2021.2.0\\jetbrains.annotations.2021.2.0.nupkg.sha512",
+    "C:\\Users\\jmlkh\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
     "C:\\Users\\jmlkh\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\jmlkh\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\jmlkh\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
