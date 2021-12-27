@@ -6,16 +6,22 @@ using My_books.Data.Services;
 using My_books.Exceptions;
 using Serilog;
 
-Log.Logger = new LoggerConfiguration().CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Host.UseSerilog();
+builder.Configuration.AddJsonFile("appsettings.json", false, true);
+
+
+builder.Host.UseSerilog((ctx, lc) =>
+{
+   lc.WriteTo.Console()
+      .ReadFrom.Configuration(ctx.Configuration);
+});
 
 // Add services to the container.
 builder.Services.AddControllers();
 
-Log.CloseAndFlush();
+
 
 //db setting
 builder.Services.AddDbContext<AppDbContext>(options => 

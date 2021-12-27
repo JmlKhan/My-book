@@ -13,10 +13,12 @@ namespace My_books.Controllers
     public class PublishersController : ControllerBase
     {
         private readonly PublisherService _publisherService;
+        private readonly ILogger<PublishersController> _logger;
 
-        public PublishersController(PublisherService publisherService)
+        public PublishersController(PublisherService publisherService, ILogger<PublishersController> logger)
         {
             _publisherService = publisherService;
+            _logger = logger;
         }
 
         [HttpGet("get-all-publishers")]
@@ -24,6 +26,7 @@ namespace My_books.Controllers
         {
             try
             {
+                _logger.LogInformation("this is just a log in GetAllPublishers");
                 var publishers = _publisherService.GetAllPublishers(sortBy,searchString, pageNumber);
                 return Ok(publishers);
             }
