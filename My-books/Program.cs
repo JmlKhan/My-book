@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.EntityFrameworkCore;
 using My_books.Data;
 using My_books.Data.Services;
@@ -27,6 +28,8 @@ builder.Services.AddApiVersioning(config =>
 {
     config.DefaultApiVersion = new ApiVersion(1, 0);
     config.AssumeDefaultVersionWhenUnspecified = true;
+
+    config.ApiVersionReader = new HeaderApiVersionReader("custom-version-header");
 });
 
 builder.Services.AddSwaggerGen();
