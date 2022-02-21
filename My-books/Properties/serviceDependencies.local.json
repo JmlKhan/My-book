@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "secrets1": {
+      "type": "secrets.user"
+    },
+    "mssql1": {
+      "secretStore": "LocalSecretsFile",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/emanagerserver/databases/EManagerDb",
+      "type": "mssql.azure",
+      "connectionId": "AppDbContext"
+    },
+    "mssql2": {
+      "ignored": "true",
+      "suggestion": "true",
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:DefaultConnectionString"
+    }
+  }
+}

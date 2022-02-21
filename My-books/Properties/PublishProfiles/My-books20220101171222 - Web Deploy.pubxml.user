@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7KkJ71yVcU+3pjgSJKWALAAAAAACAAAAAAAQZgAAAAEAACAAAACypKDzHD/CwLXkloou88nNqY0vVe05Ce5XzzvGrQNGnwAAAAAOgAAAAAIAACAAAADWsi8pvl6HO/s4y/RLuBIuJczB75Knc4YUmB7LP9lvR4AAAAAM+7+EviFmFm8YeW1sXJmhcYLp4Nb3yHTH7ftxRqqJG3ZjRFwOV/gSlkhYxIK36d+KGNobfGhdVIUd4B9uwlAxVv1bUKT5YIVsF/dNA5FFsUp18PVlOpKArqNb8QH8UBpTVWRQX00XDbk538bkSbe3Z0sPUuisHrPWGZhWN3i4V0AAAABObitJjb1t9PfOoJoOU48vzK1y1C9bjSNMLSY95ylYUiyR43EJY40kFk3JuwuXQOesXb0JD3xz6dNzTRwpZEH0</EncryptedPassword>
+    <History>True|2022-01-02T04:40:25.2935295Z;True|2022-01-02T09:39:12.9114372+05:00;True|2022-01-02T09:37:17.5134068+05:00;True|2022-01-01T22:22:25.2443514+05:00;False|2022-01-01T22:19:34.0339026+05:00;True|2022-01-01T22:17:53.1177110+05:00;False|2022-01-01T22:16:28.1099322+05:00;False|2022-01-01T22:12:48.8429648+05:00;False|2022-01-01T22:00:21.6701298+05:00;False|2022-01-01T21:57:46.2895567+05:00;False|2022-01-01T21:38:42.7627145+05:00;False|2022-01-01T21:35:35.7766363+05:00;False|2022-01-01T21:18:21.5184145+05:00;False|2022-01-01T17:17:33.3423675+05:00;False|2022-01-01T17:15:25.5374596+05:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="AppDbContext">
+      <Value>Data Source=tcp:emanagerserver.database.windows.net,1433%3bInitial Catalog=EManagerDb%3bUser Id=Jamol%40emanagerserver%3bPassword=123456Aa</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

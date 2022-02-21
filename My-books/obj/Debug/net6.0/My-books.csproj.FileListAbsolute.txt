@@ -1,4 +1,3 @@
-C:\Users\jmlkh\source\repos\My-books\My-books\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\jmlkh\source\repos\My-books\My-books\bin\Debug\net6.0\appsettings.json
 C:\Users\jmlkh\source\repos\My-books\My-books\bin\Debug\net6.0\My-books.exe
 C:\Users\jmlkh\source\repos\My-books\My-books\bin\Debug\net6.0\My-books.deps.json
