@@ -27,8 +27,10 @@ namespace my_books_test
             publisherService = new PublisherService(context);
         }
 
+        //testing GetAllPublishers method
+
         [Test, Order(1)]
-        public void GetAllPublishers_WithNoSortBy_WithNoSearchString_WithNoPageNumber()
+        public void GetAllPublishers_WithNoSortBy_WithNoSearchString_WithNoPageNumber_Test()
         {
             var result = publisherService.GetAllPublishers("", "", null);
         
@@ -38,7 +40,7 @@ namespace my_books_test
         }
         
         [Test, Order(2)]
-        public void GetAllPublishers_WithNoSortBy_WithNoSearchString_WithPageNumber()
+        public void GetAllPublishers_WithNoSortBy_WithNoSearchString_WithPageNumber_Test()
         {
             var result = publisherService.GetAllPublishers("", "", 2);
         
@@ -46,8 +48,8 @@ namespace my_books_test
             Assert.That(result.Count, Is.EqualTo(2));   
         }
 
-        [Test]
-        public void GetAllPublishers_WithNoSortBy_WithSearchString_WithNoPageNumber()
+        [Test, Order(3)]
+        public void GetAllPublishers_WithNoSortBy_WithSearchString_WithNoPageNumber_Test()
         {
             var result = publisherService.GetAllPublishers("", "3", null);
 
@@ -57,8 +59,8 @@ namespace my_books_test
 
         }
         
-        [Test]
-        public void GetAllPublishers_WithSortBy_WithNoSearchString_WithNoPageNumber()
+        [Test, Order(4)]
+        public void GetAllPublishers_WithSortBy_WithNoSearchString_WithNoPageNumber_Test()
         {
             var result = publisherService.GetAllPublishers("name_desc", "", null);
 
@@ -66,6 +68,24 @@ namespace my_books_test
             Assert.That(result.Count, Is.EqualTo(5));
             Assert.That(result.FirstOrDefault().Id, Is.EqualTo(7));
 
+        }
+
+        //testing GetPublisherById method
+        [Test, Order(5)]
+        public void GetPublisherById_WithResponse_Test()
+        {
+            var result = publisherService.GetPublisherById(2);
+
+            Assert.That( result.Id, Is.EqualTo(2));
+            Assert.That( result.Name, Is.EqualTo("Publisher 2"));
+        }
+
+        [Test, Order(6)]
+        public void GetPublisherById_WithoutResponse_Test()
+        {
+            var result = publisherService.GetPublisherById(99);
+
+            Assert.That(result, Is.EqualTo(null));
         }
 
         [OneTimeTearDown]
