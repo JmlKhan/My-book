@@ -89,7 +89,7 @@ namespace My_books.Data.Services
                 _context.SaveChanges();
             } else
             {
-                throw new Exception($"The publisher with id {id} does not exist!");
+                throw new Exception("The publisher with this id does not exist!");
             }
         }
 
