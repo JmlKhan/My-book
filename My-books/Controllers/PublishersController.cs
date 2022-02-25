@@ -21,13 +21,6 @@ namespace My_books.Controllers
             _logger = logger;
         }
 
-        [HttpGet("test")]
-        public IActionResult test()
-        {
-            var test = "hellooo";
-            return Ok(test);
-        }
-
         [HttpGet("get-all-publishers")]
         public IActionResult GetAllPublishers(string? sortBy ,string? searchString, int pageNumber)
         {

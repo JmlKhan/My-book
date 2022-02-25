@@ -35,7 +35,7 @@ namespace my_books_test
             SeedDatabase();
         }
 
-        [Test]
+        [Test,Order(1)]
         public void HTTPGET_GetAllPublishers_WithSortBySearchPageNumber_ReturnOk_Test()
         {
             IActionResult actionResult = publisherController.GetAllPublishers("name_desc", "Publisher", 1);
@@ -48,7 +48,23 @@ namespace my_books_test
             Assert.That(actionResultData.First().Id, Is.EqualTo(7));
             Assert.That(actionResultData.Count, Is.EqualTo(5));
         }
-        
+
+        [Test, Order(2)]
+        public void HTTPGET_GetPublisherById_ReturnsOk_Test()
+        {
+            var actionResult = publisherController.GetPublisherById(1);
+
+            Assert.That(actionResult, Is.TypeOf<OkObjectResult>());
+        }
+
+        [Test, Order(3)]
+        public void HTTPGET_GetPublisherById_ReturndNotFound_Test()
+        {
+            var actionResult = publisherController.GetPublisherById(99);
+
+            Assert.That(actionResult, Is.TypeOf<NotFoundResult>());
+        }
+
         [OneTimeTearDown]
         public void CleanUp()
         {
