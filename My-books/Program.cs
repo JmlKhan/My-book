@@ -21,13 +21,11 @@ builder.Host.UseSerilog((ctx, lc) =>
 // Add services to the container.
 builder.Services.AddControllers();
 
-
-
 //db setting
-builder.Services.AddDbContext<AppDbContext>(options => 
+builder.Services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(
-                builder.Configuration.GetConnectionString("DefaultConnectionString"))
-            );
+                builder.Configuration.GetConnectionString("DefaultConnectionString")));
+
 
 builder.Services.AddTransient<AuthorService>();
 builder.Services.AddTransient<PublisherService>();
@@ -53,11 +51,10 @@ var app = builder.Build();
 
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+
 
 
 app.UseHttpsRedirection();
