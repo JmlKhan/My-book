@@ -5,6 +5,7 @@ using My_books.Controllers;
 using My_books.Data;
 using My_books.Data.Model;
 using My_books.Data.Services;
+using My_books.Data.ViewModels;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -63,6 +64,48 @@ namespace my_books_test
             var actionResult = publisherController.GetPublisherById(99);
 
             Assert.That(actionResult, Is.TypeOf<NotFoundResult>());
+        }
+
+        [Test, Order(4)]
+        public void HTTPPOST_AddPublisher_ReturnsCreated_Test()
+        {
+            var newPublisherVM = new PublisherVM()
+            {
+                Name = "New Publisher"
+            };
+
+            IActionResult actionResult = publisherController.AddPublisher(newPublisherVM);
+
+            Assert.That(actionResult, Is.TypeOf<CreatedResult>());
+        }
+        
+        [Test, Order(5)]
+        public void HTTPPOST_AddPublisher_ReturnsBadRequest_Test()
+        {
+            var newPublisherVM = new PublisherVM()
+            {
+                Name = "123 Publisher"
+            };
+
+            IActionResult actionResult = publisherController.AddPublisher(newPublisherVM);
+
+            Assert.That(actionResult, Is.TypeOf<BadRequestObjectResult>());
+        }
+
+        [Test, Order(6)]
+        public void HTTPDELETE_DeletePublisherById_ReturnsNoContent_Test()
+        {
+            var actionResult = publisherController.DeletePublisherById(1);
+
+            Assert.That(actionResult, Is.TypeOf<NoContentResult>());
+        }
+        
+        [Test, Order(7)]
+        public void HTTPDELETE_DeletePublisherById_ReturnsBadRequest_Test()
+        {
+            var actionResult = publisherController.DeletePublisherById(99);
+
+            Assert.That(actionResult, Is.TypeOf<BadRequestObjectResult>());
         }
 
         [OneTimeTearDown]
